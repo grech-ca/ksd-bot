@@ -1,4 +1,5 @@
 import { NestFactory } from '@nestjs/core';
+import 'isomorphic-fetch';
 
 import { AppModule } from './app.module';
 

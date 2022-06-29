@@ -1,0 +1,1 @@
+export const UNSPLASH_API_NAME = 'UNSPLASH_API_NAME';

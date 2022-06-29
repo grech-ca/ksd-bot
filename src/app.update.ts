@@ -12,10 +12,35 @@ export class AppUpdate implements OnModuleInit {
   ) {}
 
   onModuleInit() {
-    void this.vk.api.messages.send({
-      peer_id: +KSD_ID,
-      message: 'Я проснулся',
-      random_id: Date.now(),
-    });
+    // void this.vk.api.messages.send({
+    //   peer_id: +KSD_ID,
+    //   message: 'Пока Чмоня спал его код переписали',
+    //   random_id: Date.now(),
+    // });
+
+    // [
+    //   'SIGHUP',
+    //   'SIGINT',
+    //   'SIGQUIT',
+    //   'SIGILL',
+    //   'SIGTRAP',
+    //   'SIGABRT',
+    //   'SIGBUS',
+    //   'SIGFPE',
+    //   'SIGUSR1',
+    //   'SIGSEGV',
+    //   'SIGUSR2',
+    //   'SIGTERM',
+    // ].forEach(sig => {
+    //   process.on(sig, () => {
+    //     void this.vk.api.messages
+    //       .send({
+    //         peer_id: +KSD_ID,
+    //         message: 'Я спать',
+    //         random_id: Date.now(),
+    //       })
+    //       .then(() => process.exit());
+    //   });
+    // });
   }
 }

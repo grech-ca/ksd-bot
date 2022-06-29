@@ -20,7 +20,10 @@ export class AchievementsService {
   ) {}
 
   async give(id: number, type: AchievementType) {
-    const [vkUser] = await this.vk.api.users.get({ user_ids: [id] });
+    const [vkUser] = await this.vk.api.users.get({
+      user_ids: [id],
+      fields: ['sex'],
+    });
 
     if (!vkUser) return;
 
@@ -34,7 +37,7 @@ export class AchievementsService {
 
     const achievement = ACHIEVEMENTS[type];
 
-    const { nickname } = await this.db.user.upsert({
+    const { nicknames } = await this.db.user.upsert({
       where: { id },
       update: {
         achievements: {
@@ -53,13 +56,23 @@ export class AchievementsService {
           },
         },
       },
+      select: {
+        nicknames: {
+          where: { active: true },
+          select: { value: true },
+        },
+      },
     });
 
-    const { first_name, last_name } = vkUser;
+    const nickname = nicknames[0]?.value;
+
+    const { first_name, last_name, sex } = vkUser;
+
+    const verb = `получил${sex === 1 ? 'а' : ''}`;
 
     void this.vk.api.messages.send({
       peer_id: +KSD_ID,
-      message: `🎉 ${refUser(id, first_name, last_name, nickname)} получил достижение:
+      message: `🎉 ${refUser(id, first_name, last_name, nickname)} ${verb} достижение:
 
         ${achievement.title} — ${achievement.description}
       `,
