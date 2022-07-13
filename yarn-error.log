@@ -1,0 +1,42 @@
+Arguments: 
+  /opt/homebrew/Cellar/node/18.0.0/bin/node /opt/homebrew/bin/yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint eslint-plugin-prettier eslint-config-prettier prettier eslint-plugin-imports eslint-plugin-imports-helpers
+
+PATH: 
+  /Users/grech_ca/.local/bin:/opt/homebrew/opt/libpq/bin:/opt/homebrew/opt/mysql-client/bin:/Users/grech_ca/.local/bin:/opt/homebrew/opt/libpq/bin:/opt/homebrew/opt/mysql-client/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/opt/X11/bin:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/grech_ca/.cargo/bin:/Applications/kitty.app/Contents/MacOS:/Users/grech_ca/.fzf/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  18.0.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/eslint-plugin-imports: Not found
+      at params.callback [as _callback] (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:67029:18)
+      at self.callback (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:140883:22)
+      at Request.emit (node:events:527:28)
+      at Request.<anonymous> (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:141855:10)
+      at Request.emit (node:events:527:28)
+      at IncomingMessage.<anonymous> (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:141777:12)
+      at Object.onceWrapper (node:events:641:28)
+      at IncomingMessage.emit (node:events:539:35)
+      at endReadableNT (node:internal/streams/readable:1344:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  {
+    "name": "root",
+    "private": true,
+    "devDependencies": {
+      "lerna": "^5.1.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

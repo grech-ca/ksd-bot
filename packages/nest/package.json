@@ -5,7 +5,9 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
-  "exports": ["./index.js"],
+  "exports": [
+    "./index.js"
+  ],
   "scripts": {
     "dev": "yarn start:dev",
     "prebuild": "rimraf dist",
@@ -41,6 +43,7 @@
     "module-alias": "^2.2.2",
     "nestjs-vk": "^4.4.2",
     "node-emoji": "^1.11.0",
+    "pm2": "^5.2.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
