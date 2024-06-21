@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./ksd-bot.db"
+}
+
+model User {
+  id           Int           @id
+  description  String?
+  role         String        @default("User")
+  achievements Achievement[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt @default(now())
+  nicknames     Nickname[]
+}
+
+model Achievement {
+  id          Int      @id @default(autoincrement())
+  user        User     @relation(fields: [userId], references: [id])
+  userId      Int
+  type        String
+  title       String
+  description String
+  date        DateTime @default(now())
+
+  @@unique([userId, type])
+}
+
+model Nickname {
+  id        Int      @id @default(autoincrement())
+  value     String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    Int
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt @default(now())
+}
